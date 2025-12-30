@@ -1,0 +1,27 @@
+# GitHub Actions workflow to run on push to main and release branches for src directory changes
+on:
+  push:
+    branches:
+      - main
+      - "release/**"
+    paths:
+      - "src/**"
+
+  pull_request:
+    branches:
+      - main
+      - "release/**"
+    paths:
+      - "src/**"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    #list of map
+    steps:
+      - name: Checkout Repository
+        #get code from repo to runner
+        uses: actions/checkout@v6.0.1
+
+      - name: Run tests
+        run: npm test
