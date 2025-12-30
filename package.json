@@ -1,0 +1,10 @@
+{
+    "name": "actions",
+    "version": "1.0.0",
+    "description": "Project with test scripts",
+    "main": "src/app.js",
+    "scripts": {
+        "test": "echo \"Running tests...\" && bash src/test.sh"
+    },
+    "license": "ISC"
+}
